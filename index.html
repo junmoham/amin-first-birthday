@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<meta name="robots" content="noindex, nofollow">
+<!-- 카톡 링크 카드(미리보기)는 아래 og 태그로 만들어진다. 호스팅 주소: https://junmoham.github.io/amin-first-birthday/ (GitHub Pages, 10/18) -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="1ST AMIN'S DAY · 아민이의 첫 생일에 초대합니다">
+<meta property="og:description" content="2026년 11월 8일 (일) 낮 12시 · 포포인츠 바이 쉐라톤 수원 16층 더이터리">
+<meta property="og:image" content="https://junmoham.github.io/amin-first-birthday/photos/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://junmoham.github.io/amin-first-birthday/">
+<title>아민이 첫 생일 초대장</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gaegu:wght@400;700&display=swap">
+<style>
+/* 레이아웃: 폰 한 장짜리 세로 카드(최대 430px)를 가운데 두고 위에서 아래로 읽는다.
+   색·블록은 성장 영상 모션그래픽(growth_video/mg/mg.css)과 같은 크림·나무 톤 — 영상과 링크가 한 세트로 보이게 */
+:root {
+  --bg:     #EFE4D4;  /* 카드 바깥 바닥 (데스크톱에서만 보인다) */
+  --cream:  #F5EDE3;  /* 카드 바탕 = 영상의 카드 바탕 */
+  --paper:  #FBF7F1;  /* 안쪽 상자 */
+  --ink:    #4A3426;
+  --muted:  #8C7A6B;
+  --accent: #CD2C26;  /* 크레용 빨강 — 포스터 레퍼런스(F07) */
+  --brown:  #964E28;
+  --line:   #E3D5C3;
+  --wood:   #ECD6B2;  /* 숫자 블록 (부모가 찍어 둔 실제 나무 블록 색) */
+  --edge:   #AA8054;
+  --digit:  #5C3A22;
+  --pink:   #F3B7B2;
+  --sky:    #A9CBE6;
+  --leaf:   #B9D49E;
+  --sun:    #F6CF6B;
+  --sans: 'Gaegu', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;  /* 10/16 전부 손글씨로 통일 */
+  --hand: 'Gaegu', 'Apple SD Gothic Neo', cursive, sans-serif;  /* 아민이 말투 손글씨 */
+  --type: var(--hand);
+  color-scheme: light;  /* 초대장은 종이처럼 늘 밝은 한 가지 모습 */
+}
+* { box-sizing: border-box; }
+html { background: var(--bg); }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--sans); font-size: 18px; line-height: 1.6;
+       word-break: keep-all; overflow-wrap: anywhere; -webkit-text-size-adjust: 100%; -webkit-font-smoothing: antialiased; }
+img { max-width: 100%; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+.card { max-width: 430px; margin: 0 auto; background: var(--cream); overflow: hidden; }
+@media (min-width: 480px) {
+  body { padding-block: 32px; padding-inline: 16px; }
+  .card { border-radius: 28px; box-shadow: 0 20px 60px rgba(74, 52, 38, .18); }
+}
+
+/* ── 표지 = 포스터: 크림 종이 + 빨간 크레용 1 + 배경 뗀 아민이 + 손그림 고깔·케이크 (레퍼런스 F07) ── */
+.poster { position: relative; aspect-ratio: 5 / 7; max-width: 100%; overflow: hidden; background: #FBF7F0; color: var(--ink); }
+.poster::after { content: ''; position: absolute; inset: 0; pointer-events: none; mix-blend-mode: multiply; opacity: .55;
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='g'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .35 0 0 0 0 .25 0 0 0 0 .18 0 0 0 .16 0'/></filter><rect width='100%25' height='100%25' filter='url(%23g)'/></svg>"); }  /* 종이 결 */
+.poster > * { position: absolute; }
+.poster .art { inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.ptitle { left: 0; right: 0; top: 6%; margin: 0; text-align: center; font: 700 19px/1 var(--type); letter-spacing: .16em; text-indent: .16em; }
+.psub { left: 0; right: 0; top: 11.5%; margin: 0; text-align: center; font: 700 21px/1 var(--hand); color: var(--accent); }
+.pinfo { left: 0; right: 0; bottom: 4.5%; margin: 0; text-align: center; display: grid; gap: 5px; }
+.pdate { margin: 0; font: 700 18px/1 var(--type); letter-spacing: .08em; }
+.pplace { margin: 0; font-size: 16px; color: var(--muted); }
+
+/* ── 공통 섹션 ── */
+.sec { padding: 0 24px 44px; }
+.sec::before { content: ''; display: block; width: 40px; height: 3px; margin: 0 auto 36px; border-radius: 2px;
+               background: var(--wood); box-shadow: inset 0 0 0 1px var(--edge); }  /* 작은 나무 판 하나로 단락을 나눈다 */
+.eyebrow { margin: 0; font-size: 15px; font-weight: 700; letter-spacing: .14em; color: var(--accent); text-align: center; }
+h2 { margin: 10px 0 0; font-size: 28px; font-weight: 700; line-height: 1.35; letter-spacing: -.02em; text-align: center; text-wrap: balance; }
+.sub { margin: 6px 0 0; text-align: center; color: var(--muted); font-size: 17px; }
+.note { margin: 16px 0 0; text-align: center; font-size: 16px; color: var(--muted); }
+.hand { margin: 22px 0 0; text-align: center; font-family: var(--hand); font-weight: 700; font-size: 24px; color: var(--accent); }
+
+/* 상자: 역할이 있는 곳(정보 모음·달력·연락처)에만 쓴다 */
+.box { margin-top: 24px; padding: 20px 18px; background: var(--paper); border: 1px solid var(--line); border-radius: 18px; display: grid; gap: 14px; }
+
+/* 버튼 — 나무 블록과 같은 질감 */
+.btn { appearance: none; display: inline-flex; align-items: center; justify-content: center; gap: 6px; flex: none; cursor: pointer;
+       padding: 8px 14px; border: 1px solid var(--edge); border-radius: 99px; background: var(--wood); color: var(--digit);
+       font: 700 16px/1.2 var(--sans); text-decoration: none; }
+.btn:hover { filter: brightness(.97); }
+.btn:active { transform: translateY(1px); }
+.btn.primary { background: var(--ink); border-color: var(--ink); color: var(--cream); }
+
+/* 숫자 블록 — --s 하나로 크기가 정해진다 (영상 mg.css의 .cubes와 같은 규약) */
+.cubes { display: inline-flex; gap: calc(var(--s) / 8); --s: 44px; }
+.cube { display: grid; place-items: center; width: var(--s); height: var(--s); border-radius: calc(var(--s) / 6); background: var(--wood);
+        box-shadow: inset 0 0 0 calc(var(--s) / 26) var(--edge), 0 2px 0 rgba(74, 52, 38, .14);
+        font: 900 calc(var(--s) * .6) / 1 var(--sans); color: var(--digit); font-variant-numeric: tabular-nums; }
+.cubes.big { --s: 58px; }
+
+/* ── 초대 글 ── */
+.greet { margin: 26px 0 0; text-align: center; font-size: 19px; line-height: 1.8; }
+.greet p { margin: 0 0 18px; }
+.greet p:last-child { margin-bottom: 0; }
+.parents { margin: 26px 0 0; text-align: center; font-size: 17px; color: var(--muted); }
+.parents b { color: var(--ink); font-weight: 700; }
+
+/* ── 아민이는요 ── */
+.row { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; font-size: 18px; }
+.row .k { flex: none; font-size: 16px; color: var(--muted); }
+.row .v { min-width: 0; text-align: right; font-weight: 700; }
+.today { display: grid; justify-items: center; gap: 10px; padding-top: 16px; border-top: 1px dashed var(--line); }
+.today .cap { margin: 0; font-size: 16px; color: var(--muted); }
+
+/* ── 달력 ── */
+.cal { max-width: 320px; margin-inline: auto; padding: 18px 16px 14px; }
+.cal .m { margin: 0; text-align: center; font-weight: 700; font-size: 18px; letter-spacing: .08em; font-variant-numeric: tabular-nums; }
+.cal table { width: 100%; border-collapse: collapse; table-layout: fixed; font-variant-numeric: tabular-nums; }
+.cal th { padding-bottom: 6px; font-size: 14px; font-weight: 400; color: var(--muted); }
+.cal td { height: 38px; text-align: center; font-size: 18px; }
+.cal td span { display: inline-grid; place-items: center; width: 32px; height: 32px; border-radius: 50%; }
+.cal .su { color: var(--accent); }
+.cal .sa { color: #6C8BA6; }
+.cal td.day span { background: var(--pink); color: var(--ink); font-weight: 900; box-shadow: 0 0 0 4px rgba(243, 183, 178, .35); }
+.dday { display: flex; justify-content: center; margin-top: 18px; }
+.dday span { padding: 8px 18px; border-radius: 99px; background: var(--ink); color: var(--cream); font-size: 18px; font-weight: 700; letter-spacing: .02em; }
+
+/* ── 장소 ── */
+.line { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.line .text { min-width: 0; font-size: 17px; line-height: 1.4; }
+.maps { display: flex; flex-wrap: wrap; gap: 10px; }
+.maps .btn { flex: 1 1 120px; padding: 12px 14px; font-size: 17px; }
+.way { margin-top: 22px; display: grid; gap: 14px; }
+.way .item { display: grid; grid-template-columns: 56px 1fr; gap: 12px; align-items: start; font-size: 17px; line-height: 1.5; }
+.way .item > span:last-child { min-width: 0; }
+.way .tag { padding-top: 2px; font-size: 16px; font-weight: 700; color: var(--accent); }
+
+/* ── 사진 — 폴라로이드 (영상 '처음 해 본 것들' 장면과 같은 장치) ── */
+.grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px 14px; margin-top: 26px; }
+.pola { margin: 0; padding: 8px 8px 10px; background: #fff; border-radius: 6px; box-shadow: 0 6px 18px rgba(74, 52, 38, .10);
+        transform: rotate(var(--r, 0deg)); }
+.pola .img { position: relative; aspect-ratio: 1; max-width: 100%; display: grid; place-items: center; overflow: hidden; border-radius: 3px;
+             background: var(--tint, var(--wood)); color: rgba(74, 52, 38, .45); font-size: 11px; }
+.pola img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.pola .cap { margin: 8px 0 0; text-align: center; font-family: var(--hand); font-size: 19px; line-height: 1.3; color: var(--ink); }
+
+
+/* ── 마무리 ── */
+.close { display: grid; justify-items: center; gap: 16px; padding: 48px 24px 40px; text-align: center;
+         background: linear-gradient(180deg, var(--cream), #F1E4D3); }
+.close .hand { margin: 0; }
+.sign { margin: 0; font-family: var(--hand); font-size: 22px; color: var(--ink); }
+.foot { margin: 8px 0 0; font-size: 14px; letter-spacing: .1em; color: var(--muted); }
+
+/* 복사 알림 */
+.toast { position: fixed; left: 50%; bottom: calc(24px + env(safe-area-inset-bottom, 0px)); max-width: calc(100% - 32px);
+         padding: 10px 18px; border-radius: 99px; background: var(--ink); color: var(--cream); font-size: 14px;
+         opacity: 0; transform: translate(-50%, 16px); transition: opacity .25s, transform .25s; pointer-events: none; }
+.toast.show { opacity: 1; transform: translate(-50%, 0); }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+</style>
+</head>
+<body>
+<main class="card">
+
+  <header class="poster" id="poster">
+    <!-- 손그림 표지 그림 (10/18, 레퍼런스 F10형 = 1 뒤에서 빼꼼, codex-imagegen). 대안: photos/poster_art_stand.jpg (F07형) -->
+    <img class="art" src="photos/poster_art.jpg" alt="고깔을 쓰고 크레용 숫자 1 뒤에서 내다보는 아민이">
+    <p class="ptitle">1ST AMIN'S DAY</p>
+    <p class="psub">아민이의 첫 생일에 초대합니다</p>
+    <div class="pinfo">
+      <p class="pdate">2026 . 11 . 8 . SUN  12:00 PM</p>
+      <p class="pplace">포포인츠 바이 쉐라톤 수원 16층 더이터리</p>
+    </div>
+  </header>
+
+  <section class="sec" id="gallery">
+    <p class="eyebrow">364 DAYS</p>
+    <h2>아민이의 364일</h2>
+    <p class="sub">많이 웃고, 처음 해 본 것도 많았어요</p>
+    <div class="grid">
+      <figure class="pola" style="--r:-1.2deg; --tint:#F3D9D4"><div class="img"><img src="photos/01.jpg" alt="" onerror="this.remove()"><span>사진 15</span></div><figcaption class="cap">처음 만난 날</figcaption></figure>
+      <figure class="pola" style="--r:1.1deg; --tint:#D3E2EE"><div class="img"><img src="photos/02.jpg" alt="" onerror="this.remove()"><span>사진 637</span></div><figcaption class="cap">첫 크리스마스</figcaption></figure>
+      <figure class="pola" style="--r:0.8deg; --tint:#F6E6B8"><div class="img"><img src="photos/03.jpg" alt="" onerror="this.remove()"><span>사진 1314</span></div><figcaption class="cap">백일상</figcaption></figure>
+      <figure class="pola" style="--r:-1deg; --tint:#F7D5D9"><div class="img"><img src="photos/05.jpg" alt="" onerror="this.remove()"><span>사진 1985</span></div><figcaption class="cap">첫 벚꽃</figcaption></figure>
+      <figure class="pola" style="--r:1.3deg; --tint:#D9E6CB"><div class="img"><img src="photos/04.jpg" alt="" onerror="this.remove()"><span>파리</span></div><figcaption class="cap">첫 해외여행</figcaption></figure>
+      <figure class="pola" style="--r:-0.9deg; --tint:#F6E6B8"><div class="img"><img src="photos/07.jpg" alt="" style="object-position:50% 40%" onerror="this.remove()"><span>IMG_0059</span></div><figcaption class="cap">많이 웃었어요</figcaption></figure>
+      <figure class="pola" style="--r:1deg; --tint:#EADCC8"><div class="img"><img src="photos/06.jpg" alt="" style="object-position:50% 42%" onerror="this.remove()"><span>IMG_0383</span></div><figcaption class="cap">캠핑도 가 보고</figcaption></figure>
+      <figure class="pola" style="--r:-1.1deg; --tint:#D3E2EE"><div class="img"><img src="photos/08.jpg" alt="" style="object-position:50% 45%" onerror="this.remove()"><span>IMG_1039</span></div><figcaption class="cap">이유식도 냠냠</figcaption></figure>
+    </div>
+  </section>
+
+  <section class="sec" id="greeting">
+    <p class="eyebrow">INVITATION</p>
+    <div class="greet">
+      <p>안녕하세요, 아민이에요.<br>지난해 11월 10일에<br>엄마 아빠를 처음 만났어요.</p>
+      <p>그날부터 364일째 되는 날,<br>제 첫 생일에<br>소중한 분들을 모시고 싶어요.</p>
+      <p>아직 걸음은 서툴지만<br>한 걸음씩 걸어가<br>반갑게 인사드릴게요.</p>
+    </div>
+    <p class="hand">꼭 와 주세요!</p>
+    <p class="parents">아빠 <b>지준모</b> · 엄마 <b>안수교</b>의 딸 <b>아민</b></p>
+  </section>
+
+  <section class="sec" id="about">
+    <p class="eyebrow">ABOUT AMIN</p>
+    <h2>아민이는요</h2>
+    <div class="box">
+      <div class="row"><span class="k">이름</span><span class="v">지아민</span></div>
+      <div class="row"><span class="k">태어난 날</span><span class="v">2025년 11월 10일 월요일</span></div>
+      <div class="row"><span class="k">첫 생일</span><span class="v">2026년 11월 10일 화요일</span></div>
+      <div class="today">
+        <!-- JS가 오늘 날짜로 다시 계산한다. JS가 꺼져 있어도 글이 비지 않게 기본값을 적어 둔다 -->
+        <div class="cubes" id="todayCubes" aria-hidden="true"><span class="cube">3</span><span class="cube">3</span><span class="cube">7</span></div>
+        <p class="cap" id="todayText">오늘은 아민이가 태어난 지 337일째</p>
+      </div>
+    </div>
+    <p class="note">생일은 11월 10일이지만, 잔치는 이틀 앞 일요일에 해요.</p>
+  </section>
+
+  <section class="sec" id="when">
+    <p class="eyebrow">DATE</p>
+    <h2>2026년 11월 8일</h2>
+    <p class="sub">일요일 낮 12시</p>
+    <div class="box cal">
+      <p class="m">2026 . 11</p>
+      <table aria-label="2026년 11월 달력">
+        <thead><tr><th class="su">일</th><th>월</th><th>화</th><th>수</th><th>목</th><th>금</th><th class="sa">토</th></tr></thead>
+        <tbody>
+          <tr><td class="su"><span>1</span></td><td><span>2</span></td><td><span>3</span></td><td><span>4</span></td><td><span>5</span></td><td><span>6</span></td><td class="sa"><span>7</span></td></tr>
+          <tr><td class="su day"><span>8</span></td><td><span>9</span></td><td><span>10</span></td><td><span>11</span></td><td><span>12</span></td><td><span>13</span></td><td class="sa"><span>14</span></td></tr>
+          <tr><td class="su"><span>15</span></td><td><span>16</span></td><td><span>17</span></td><td><span>18</span></td><td><span>19</span></td><td><span>20</span></td><td class="sa"><span>21</span></td></tr>
+          <tr><td class="su"><span>22</span></td><td><span>23</span></td><td><span>24</span></td><td><span>25</span></td><td><span>26</span></td><td><span>27</span></td><td class="sa"><span>28</span></td></tr>
+          <tr><td class="su"><span>29</span></td><td><span>30</span></td><td></td><td></td><td></td><td></td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="dday"><span id="dday">돌잔치까지 D-27</span></div>
+  </section>
+
+  <section class="sec" id="where">
+    <p class="eyebrow">PLACE</p>
+    <h2>포포인츠 바이 쉐라톤 수원</h2>
+    <p class="sub">16층 더이터리 (The Eatery)</p>
+    <div class="box">
+      <div class="line">
+        <span class="text" id="addrText">경기 수원시 팔달구 효원로307번길&nbsp;27</span>
+        <button class="btn" type="button" data-copy="경기 수원시 팔달구 효원로307번길 27" data-sel="addrText">주소 복사</button>
+      </div>
+      <div class="maps">
+        <a class="btn primary" href="https://place.map.kakao.com/102290829" target="_blank" rel="noopener">카카오맵</a>
+        <a class="btn" href="https://place.map.kakao.com/1590973831" target="_blank" rel="noopener">주차장 길찾기</a>
+        <a class="btn" href="https://map.naver.com/p/search/%ED%8F%AC%ED%8F%AC%EC%9D%B8%EC%B8%A0%20%EB%B0%94%EC%9D%B4%20%EC%89%90%EB%9D%BC%ED%86%A4%20%EC%88%98%EC%9B%90" target="_blank" rel="noopener">네이버지도</a>
+      </div>
+    </div>
+    <div class="way">
+      <div class="item"><span class="tag">지하철</span><span>수인분당선 수원시청역 10번 출구에서<br>걸어서 5분</span></div>
+      <div class="item"><span class="tag">주차</span><span>호텔 지하·옥외 주차장을 이용해 주세요<br>돌잔치 손님은 <b>4시간 무료</b>예요</span></div>
+      <div class="item"><span class="tag">등록</span><span><b>차량번호를 꼭 등록해 주세요</b><br>16층 행사장에서 차량번호를 알려 주시면 돼요<br>등록하지 않으면 일반 요금(10분당 2,000원)이 나와요</span></div>
+      <div class="item"><span class="tag">만차</span><span>호텔 주차장이 차면 외부 주차장도<br>똑같이 4시간 무료예요</span></div>
+      <div class="item"><span class="tag">문의</span><span>더이터리 <span id="telHotel">031-784-9344</span></span></div>
+    </div>
+  </section>
+
+
+
+  <footer class="close">
+    <div class="cubes big" aria-hidden="true"><span class="cube">3</span><span class="cube">6</span><span class="cube">4</span></div>
+    <p class="hand">364일째 되는 날, 기다릴게요</p>
+    <p class="sign">아민이 올림</p>
+    <button class="btn" type="button" data-copy="url">초대장 링크 복사</button>
+    <p class="foot">AMIN · FIRST BIRTHDAY · 2026. 11. 8</p>
+  </footer>
+
+</main>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+// 날짜 셈법은 성장 영상의 숫자 블록과 같다: 태어난 날을 1일째로 센다 → 11/8 잔치 날 = 364일째
+const BIRTH = new Date(2025, 10, 10);   // 2025-11-10 (월은 0부터)
+const PARTY = new Date(2026, 10, 8);    // 2026-11-08
+const DAY = 86400000;
+const today = new Date(); today.setHours(0, 0, 0, 0);
+const nth = Math.round((today - BIRTH) / DAY) + 1;
+const left = Math.round((PARTY - today) / DAY);
+
+// 숫자를 세 자리 나무 블록으로 그린다
+function drawCubes(el, n) {
+  el.innerHTML = String(n).padStart(3, '0').split('').map(d => `<span class="cube">${d}</span>`).join('');
+}
+drawCubes(document.getElementById('todayCubes'), nth);
+document.getElementById('todayText').textContent = `오늘은 아민이가 태어난 지 ${nth}일째`;
+document.getElementById('dday').textContent =
+  left > 0 ? `돌잔치까지 D-${left}` : left === 0 ? '오늘이 바로 그날이에요!' : '첫 생일을 함께해 주셔서 감사해요';
+
+// 복사 버튼: 클립보드가 막힌 환경(일부 앱 안 브라우저)에서는 글자를 선택해 주고 직접 복사하게 한다
+const toast = document.getElementById('toast');
+let toastTimer;
+function say(msg) {
+  toast.textContent = msg;
+  toast.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => toast.classList.remove('show'), 1800);
+}
+function selectText(id) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  const range = document.createRange();
+  range.selectNodeContents(el);
+  const sel = window.getSelection();
+  sel.removeAllRanges();
+  sel.addRange(range);
+}
+document.querySelectorAll('[data-copy]').forEach(btn => {
+  btn.addEventListener('click', async () => {
+    const text = btn.dataset.copy === 'url' ? location.href : btn.dataset.copy;
+    try {
+      await navigator.clipboard.writeText(text);
+      say('복사했어요');
+    } catch {
+      selectText(btn.dataset.sel);
+      say('글자를 길게 눌러 복사해 주세요');
+    }
+  });
+});
+</script>
+</body>
+</html>
