@@ -54,7 +54,7 @@ img { max-width: 100%; }
 }
 
 /* ── 표지 = 포스터: 크림 종이 + 빨간 크레용 1 + 배경 뗀 아민이 + 손그림 고깔·케이크 (레퍼런스 F07) ── */
-.poster { position: relative; aspect-ratio: 5 / 7; max-width: 100%; overflow: hidden; background: #FBF7F0; color: var(--ink); }
+.poster { position: relative; aspect-ratio: 5 / 7; max-width: 100%; overflow: hidden; background: #FDFEF8; color: var(--ink); }
 .poster::after { content: ''; position: absolute; inset: 0; pointer-events: none; mix-blend-mode: multiply; opacity: .55;
   background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='g'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .35 0 0 0 0 .25 0 0 0 0 .18 0 0 0 .16 0'/></filter><rect width='100%25' height='100%25' filter='url(%23g)'/></svg>"); }  /* 종이 결 */
 .poster > * { position: absolute; }
@@ -159,8 +159,8 @@ h2 { margin: 10px 0 0; font-size: 28px; font-weight: 700; line-height: 1.35; let
 <main class="card">
 
   <header class="poster" id="poster">
-    <!-- 손그림 표지 그림 (10/18, 레퍼런스 F10형 = 1 뒤에서 빼꼼, codex-imagegen). 대안: photos/poster_art_stand.jpg (F07형) -->
-    <img class="art" src="photos/poster_art.jpg" alt="고깔을 쓰고 크레용 숫자 1 뒤에서 내다보는 아민이">
+    <!-- 손그림 표지 그림 (10/18 확정 ⑦ 서서 케이크 가리키기, codex-imagegen + 원본 얼굴 복원). 다른 시안: photos/poster_art_*.jpg -->
+    <img class="art" src="photos/poster_art.jpg" alt="고깔을 쓰고 서서 케이크를 가리키는 아민이">
     <p class="ptitle">1ST AMIN'S DAY</p>
     <p class="psub">아민이의 첫 생일에 초대합니다</p>
     <div class="pinfo">
