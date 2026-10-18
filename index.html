@@ -136,7 +136,7 @@ h2 { margin: 10px 0 0; font-size: 28px; font-weight: 700; line-height: 1.35; let
         transform: rotate(var(--r, 0deg)); }
 .pola .img { position: relative; aspect-ratio: 1; max-width: 100%; display: grid; place-items: center; overflow: hidden; border-radius: 3px;
              background: var(--tint, var(--wood)); color: rgba(74, 52, 38, .45); font-size: 11px; }
-.pola img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.pola img, .pola video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .pola .cap { margin: 8px 0 0; text-align: center; font-family: var(--hand); font-size: 19px; line-height: 1.3; color: var(--ink); }
 
 
@@ -174,7 +174,7 @@ h2 { margin: 10px 0 0; font-size: 28px; font-weight: 700; line-height: 1.35; let
     <h2>아민이의 364일</h2>
     <p class="sub">많이 웃고, 처음 해 본 것도 많았어요</p>
     <div class="grid">
-      <figure class="pola" style="--r:-1.2deg; --tint:#F3D9D4"><div class="img"><img src="photos/01.jpg" alt="" onerror="this.remove()"><span>사진 15</span></div><figcaption class="cap">처음 만난 날</figcaption></figure>
+      <figure class="pola" style="--r:-1.2deg; --tint:#F3D9D4"><div class="img"><video src="photos/01.mp4" poster="photos/01_poster.jpg" autoplay muted loop playsinline preload="auto" aria-label="태어난 날 영상"></video><span>사진 15</span></div><figcaption class="cap">처음 만난 날</figcaption></figure>
       <figure class="pola" style="--r:1.1deg; --tint:#D3E2EE"><div class="img"><img src="photos/02.jpg" alt="" onerror="this.remove()"><span>사진 637</span></div><figcaption class="cap">첫 크리스마스</figcaption></figure>
       <figure class="pola" style="--r:0.8deg; --tint:#F6E6B8"><div class="img"><img src="photos/03.jpg" alt="" onerror="this.remove()"><span>사진 1314</span></div><figcaption class="cap">백일상</figcaption></figure>
       <figure class="pola" style="--r:-1deg; --tint:#F7D5D9"><div class="img"><img src="photos/05.jpg" alt="" onerror="this.remove()"><span>사진 1985</span></div><figcaption class="cap">첫 벚꽃</figcaption></figure>
